@@ -12,20 +12,20 @@ body {
     align-items: center;
 }
 .titleContainer {
-    width: 350px;
+    width: 320px;
     background-color: #161b22;
-    padding: 20px ;
+    padding: 10px ;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0,0,0,0.5);
     text-align: center;
-
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 .titleContainer:hover {
     box-shadow: 0 0 30px rgba(0,0,0,0.7);
 }
 h1 {
     margin-bottom: 20px;
+    margin-top: 20px;
     font-size: 22px;
 }
 .searchBox {
@@ -58,9 +58,30 @@ button:hover {
     background-color: #2ea043;
 }
 .profileBox {
+    /* width: 320px; */
+    /* height: 200px; */
     background-color: #0d1117;
-    padding: 15px;
     border-radius: 8px;
     border: 1px solid #30363d;
     margin-top: 10px;
+    padding: 10px;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+.avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+
+.stats div {
+    text-align: center;
 }
