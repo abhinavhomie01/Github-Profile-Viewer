@@ -12,7 +12,7 @@ searchButton.addEventListener("click",async function (){
     try{
         const response = await fetch (`https://api.github.com/users/${username}`);
         if(!response.ok){
-            throw new error("User not found")
+            throw new Error("User not found")
         }
         const data =await response.json();
         // console.log(data);
@@ -39,7 +39,7 @@ searchButton.addEventListener("click",async function (){
         </div>`;
         const viewBtn=document.getElementById("viewReposButton");
         viewBtn.addEventListener("click",function(){
-            window.location.href=`repos.html?user=${username}`;
+            window.open(`repos.html?user=${username}`,target="_blank");
         });
     }
     catch(error){
