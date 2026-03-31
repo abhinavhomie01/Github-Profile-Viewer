@@ -1,30 +1,207 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-body{
-    background-color:#0d1117;
-    color:#c9d1d9;
-    font-family: Arial;
-    padding:20px;
+:root {
+    --bg:        #0a0c10;
+    --surface:   #111318;
+    --surface2:  #1a1d24;
+    --border:    #21262d;
+    --border2:   #30363d;
+    --text:      #e6edf3;
+    --muted:     #7d8590;
+    --accent:    #3b82f6;
+    --accent2:   #60a5fa;
+    --green:     #238636;
+    --green2:    #2ea043;
+    --yellow:    #d29922;
+    --radius:    10px;
+    --font-mono: 'JetBrains Mono', monospace;
+    --font-sans: 'Inter', sans-serif;
 }
-h1{
-    margin-bottom:10px ;
-    font-size: 24px;
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: var(--font-sans);
+    min-height: 100vh;
+    padding: 24px 16px;
+    display: flex;
+    justify-content: center;
 }
-.repo{
-    background-color: #161b22;
-    padding: 10px;
-    border-radius:6px;
-    margin-bottom: 10px;
-    border: 1px solid #30363d;
+
+.page-container {
+    width: 100%;
+    max-width: 640px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
-.repo:hover{
-    transform: translateY(-3px);
-    background-color: #1f2933;
+
+.page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
 }
-.repo a{
-    color: #58a6ff;
+
+.back-btn {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: var(--muted);
     text-decoration: none;
-   
+    background-color: transparent;
+    outline: none;
+    border: 0px;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: background 0.15s, color 0.15s;
 }
-.repo a:hover{
+
+.back-btn svg {
+    width: 15px;
+    height: 15px;
+}
+
+.back-btn:hover {
+    background: var(--surface2);
+    color: var(--text);
+}
+
+.list-title {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    font-family: var(--font-mono);
+}
+
+.header-spacer {
+    width: 80px; 
+}
+
+.list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.loading-text {
+    color: var(--muted);
+    font-size: 14px;
+    padding: 12px 0;
+}
+
+.repo {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px 18px;
+    transition: border-color 0.15s, transform 0.15s, background 0.15s;
+}
+
+.repo:hover {
+    border-color: var(--accent);
+    background: var(--surface2);
+    transform: translateY(-2px);
+}
+
+.repo a {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--accent2);
+    text-decoration: none;
+}
+
+.repo a:hover {
     text-decoration: underline;
+}
+
+.repo-meta {
+    display: flex;
+    gap: 14px;
+    margin-top: 8px;
+}
+
+.repo-meta span {
+    font-size: 12px;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.profile-follow-list {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    cursor: pointer;
+    transition: border-color 0.15s, transform 0.15s, background 0.15s;
+    text-decoration: none;
+}
+
+.profile-follow-list:hover {
+    border-color: var(--accent);
+    background: var(--surface2);
+    transform: translateY(-2px);
+}
+
+.profile-follow-list img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--border2);
+    flex-shrink: 0;
+}
+
+.follow-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.follow-login {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--accent2);
+    text-decoration: none;
+}
+
+.profile-follow-list:hover .follow-login {
+    text-decoration: underline;
+}
+
+.follow-label {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.empty-msg {
+    color: var(--muted);
+    font-size: 14px;
+    padding: 12px 0;
+}
+
+.error-msg {
+    color: #f85149;
+    font-size: 14px;
+    padding: 12px 0;
+}
+
+@media (max-width: 480px) {
+    .page-container { max-width: 100%; }
+    .list-title { font-size: 14px; }
 }
