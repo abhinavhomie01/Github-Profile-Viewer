@@ -16,7 +16,13 @@ searchButton.addEventListener("click", async function () {
     profileBox.innerHTML = `<p class="loading-text">Loading…</p>`;
 
     try {
+        
         const res = await fetch(`https://api.github.com/users/${username}`);
+
+        if(!res.ok){
+            throw new Error("User not found")
+        }
+
         const data = await res.json();
 
         profileBox.innerHTML = `
